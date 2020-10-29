@@ -17,7 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-public class GoogleSearchForIn28minutes {
+public class FacebookLogin {
 	private WebDriver driver;
 	private String baseUrl;
 	private boolean acceptNextAlert = true;
@@ -25,23 +25,24 @@ public class GoogleSearchForIn28minutes {
 
 	@Before
 	public void setUp() throws Exception {
-
-//		ChromeDriverManager.getInstance().setup();
+//	  ChromeDriverManager.getInstance().setup();
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\bretb\\Desktop\\chrome-driver-selenium\\chromedriver.exe");
-		driver = new ChromeDriver();
 
+		driver = new ChromeDriver();
 		baseUrl = "https://www.katalon.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	@Test
-	public void testGoogleSearchForIn28minutes() throws Exception {
-		driver.get("https://www.google.com/");
-		driver.findElement(By.name("q")).click();
-		driver.findElement(By.name("q")).clear();
-		driver.findElement(By.name("q")).sendKeys("in28minutes");
-		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+	public void testFacebookLogin() throws Exception {
+		driver.get("https://www.facebook.com/");
+		driver.findElement(By.id("email")).click();
+		driver.findElement(By.id("email")).clear();
+		driver.findElement(By.id("email")).sendKeys("in28minutes");
+		driver.findElement(By.id("pass")).clear();
+		driver.findElement(By.id("pass")).sendKeys("dummy");
+		driver.findElement(By.id("pass")).sendKeys(Keys.ENTER);
 	}
 
 	@After
