@@ -28,7 +28,6 @@ public class FacebookLogin {
 //	  ChromeDriverManager.getInstance().setup();
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\bretb\\Desktop\\chrome-driver-selenium\\chromedriver.exe");
-
 		driver = new ChromeDriver();
 		baseUrl = "https://www.katalon.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
